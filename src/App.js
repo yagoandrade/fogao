@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+import todosDesligados from "./images/todos-desligados.jpeg";
+import um from "./images/1-ligado.jpeg";
 import umDois from "./images/1-2-ligado.jpeg";
 import umDoisTres from "./images/1-2-3-ligado.jpeg";
 import umDoisQuatro from "./images/1-2-4-ligado.jpeg";
