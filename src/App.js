@@ -2,9 +2,14 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import todosDesligados from "./images/todos-desligados.jpeg";
 import um from "./images/1-ligado.jpeg";
+=======
+import todosDesligados from "./images/todos-desligados.jpeg";
+import um from "https://github.com/yagoandrade/fogao/blob/main/src/images/1-ligado.jpeg?raw=true";
+>>>>>>> parent of 1ca1e91 (Update App.js)
 import umDois from "./images/1-2-ligado.jpeg";
 import umDoisTres from "./images/1-2-3-ligado.jpeg";
 import umDoisQuatro from "./images/1-2-4-ligado.jpeg";
@@ -20,7 +25,10 @@ import tresQuatro from "./images/3-4-ligado.jpeg";
 import quatro from "./images/4-ligado.jpeg";
 import todosLigados from "./images/todos-ligados.jpeg";
 
+<<<<<<< HEAD
 >>>>>>> parent of a1c1dfe (Update App.js)
+=======
+>>>>>>> parent of 1ca1e91 (Update App.js)
 function App() {
   const [first, setFirst] = useState(localStorage.getItem("firstItem"));
   const [second, setSecond] = useState(localStorage.getItem("secondItem"));
@@ -67,25 +75,6 @@ function App() {
     }
   };
 
-  let imgs = [
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/todos-desligados.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/1-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/2-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/3-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/4-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/1-2-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/1-3-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/1-4-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/1-2-3-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/1-2-4-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/1-3-4-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/2-3-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/2-4-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/2-3-4-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/3-4-ligado.jpeg?raw=true",
-    "https://github.com/yagoandrade/fogao/blob/main/src/images/todos-ligados.jpeg?raw=true",
-  ];
-
   const [image, setImage] = useState("");
 
   useEffect(() => {
@@ -95,7 +84,7 @@ function App() {
       third === (null || false) &&
       fourth === (null || false)
     ) {
-      setImage(imgs[0]);
+      setImage(todosDesligados);
     }
 
     // Caso o 1º esteja ligado e o resto desligado
@@ -105,7 +94,7 @@ function App() {
       third === (null || false) &&
       fourth === (null || false)
     ) {
-      setImage(imgs[1]);
+      setImage(um);
     }
 
     // Caso o 2º esteja ligado e o resto desligado
@@ -115,7 +104,7 @@ function App() {
       third === (null || false) &&
       fourth === (null || false)
     ) {
-      setImage(imgs[2]);
+      setImage(dois);
     }
 
     // Caso o 3º esteja ligado e o resto desligado
@@ -125,7 +114,7 @@ function App() {
       third === true &&
       fourth === (null || false)
     ) {
-      setImage(imgs[3]);
+      setImage(tres);
     }
 
     // Caso o 4º esteja ligado e o resto desligado
@@ -135,7 +124,7 @@ function App() {
       third === (null || false) &&
       fourth === true
     ) {
-      setImage(imgs[4]);
+      setImage(quatro);
     }
 
     // Caso o 1º e 2º esteja ligado e o resto desligado
@@ -145,7 +134,7 @@ function App() {
       third === (null || false) &&
       fourth === (null || false)
     ) {
-      setImage(imgs[5]);
+      setImage(umDois);
     }
 
     // Caso o 1º e 3º esteja ligado e o resto desligado
@@ -155,7 +144,7 @@ function App() {
       third === true &&
       fourth === (null || false)
     ) {
-      setImage(imgs[6]);
+      setImage(umTres);
     }
 
     // Caso o 1º e 4º esteja ligado e o resto desligado
@@ -165,7 +154,7 @@ function App() {
       third === (null || false) &&
       fourth === true
     ) {
-      setImage(imgs[7]);
+      setImage(umQuatro);
     }
 
     // Caso o 1º 2º e 3º esteja ligado e o resto desligado
@@ -175,7 +164,7 @@ function App() {
       third === true &&
       fourth === (null || false)
     ) {
-      setImage(imgs[8]);
+      setImage(umDoisTres);
     }
 
     // Caso o 1º 2º e 4º esteja ligado e o resto desligado
@@ -185,17 +174,17 @@ function App() {
       third === (null || false) &&
       fourth === true
     ) {
-      setImage(imgs[9]);
+      setImage(umDoisQuatro);
     }
 
-    // Caso o 1º 3º e 4º esteja ligado e o resto desligado
+    // Caso o 1º 2º e 4º esteja ligado e o resto desligado
     else if (
       first === true &&
       second === (null || false) &&
       third === true &&
       fourth === true
     ) {
-      setImage(imgs[10]);
+      setImage(umTresQuatro);
     }
 
     // Caso o 2º 3º esteja ligado e o resto desligado
@@ -205,7 +194,7 @@ function App() {
       third === true &&
       fourth === (null || false)
     ) {
-      setImage(imgs[11]);
+      setImage(doisTres);
     }
 
     // Caso o 2º e 4º esteja ligado e o resto desligado
@@ -215,7 +204,7 @@ function App() {
       third === (null || false) &&
       fourth === true
     ) {
-      setImage(imgs[12]);
+      setImage(doisQuatro);
     }
 
     // Caso o 2º, 3º e 4º esteja ligado e o resto desligado
@@ -225,7 +214,7 @@ function App() {
       third === true &&
       fourth === true
     ) {
-      setImage(imgs[13]);
+      setImage(doisTresQuatro);
     }
 
     // Caso o 3º 4º esteja ligado e o resto desligado
@@ -235,7 +224,7 @@ function App() {
       third === true &&
       fourth === true
     ) {
-      setImage(imgs[14]);
+      setImage(tresQuatro);
     }
 
     // Caso todos estejam ligados
@@ -245,9 +234,11 @@ function App() {
       third === true &&
       fourth === true
     ) {
-      setImage(imgs[15]);
+      setImage(todosLigados);
     }
-  }, [first, second, third, fourth, image, imgs]);
+
+    console.log(image);
+  }, [first, second, third, fourth, image]);
 
   return (
     <div className="App">
