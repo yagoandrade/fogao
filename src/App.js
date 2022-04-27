@@ -1,6 +1,26 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+<<<<<<< HEAD
+=======
+import todosDesligados from "./images/todos-desligados.jpeg";
+import um from "./images/1-ligado.jpeg";
+import umDois from "./images/1-2-ligado.jpeg";
+import umDoisTres from "./images/1-2-3-ligado.jpeg";
+import umDoisQuatro from "./images/1-2-4-ligado.jpeg";
+import umTres from "./images/1-3-ligado.jpeg";
+import umTresQuatro from "./images/1-3-4-ligado.jpeg";
+import umQuatro from "./images/1-4-ligado.jpeg";
+import dois from "./images/2-ligado.jpeg";
+import doisTres from "./images/2-3-ligado.jpeg";
+import doisQuatro from "./images/2-4-ligado.jpeg";
+import doisTresQuatro from "./images/2-3-4-ligado.jpeg";
+import tres from "./images/3-ligado.jpeg";
+import tresQuatro from "./images/3-4-ligado.jpeg";
+import quatro from "./images/4-ligado.jpeg";
+import todosLigados from "./images/todos-ligados.jpeg";
+
+>>>>>>> parent of a1c1dfe (Update App.js)
 function App() {
   const [first, setFirst] = useState(localStorage.getItem("firstItem"));
   const [second, setSecond] = useState(localStorage.getItem("secondItem"));
