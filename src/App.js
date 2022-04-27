@@ -303,8 +303,7 @@ function App() {
             </div>
           </div>
           <p className="mt-5">
-            Pressione qualquer botão para controlar o fogão {first} {second}{" "}
-            {third} {fourth}
+            Pressione qualquer botão para controlar o fogão
           </p>
         </header>
         <div>
