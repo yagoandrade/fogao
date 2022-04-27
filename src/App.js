@@ -1,5 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
+
+import todosDesligados from "./images/todos-desligados.jpeg";
+import um from "./images/1-ligado.jpeg";
+import umDois from "./images/1-2-ligado.jpeg";
+import umDoisTres from "./images/1-2-3-ligado.jpeg";
+import umDoisQuatro from "./images/1-2-4-ligado.jpeg";
+import umTres from "./images/1-3-ligado.jpeg";
+import umTresQuatro from "./images/1-3-4-ligado.jpeg";
+import umQuatro from "./images/1-4-ligado.jpeg";
+import dois from "./images/2-ligado.jpeg";
+import doisTres from "./images/2-3-ligado.jpeg";
+import doisQuatro from "./images/2-4-ligado.jpeg";
+import doisTresQuatro from "./images/2-3-4-ligado.jpeg";
+import tres from "./images/3-ligado.jpeg";
+import tresQuatro from "./images/3-4-ligado.jpeg";
+import quatro from "./images/4-ligado.jpeg";
+import todosLigados from "./images/todos-ligados.jpeg";
 
 function App() {
   const [first, setFirst] = useState(localStorage.getItem("firstItem"));
@@ -47,79 +64,251 @@ function App() {
     }
   };
 
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    if (
+      first === (null || false) &&
+      second === (null || false) &&
+      third === (null || false) &&
+      fourth === (null || false)
+    ) {
+      setImage(todosDesligados);
+    }
+
+    // Caso o 1º esteja ligado e o resto desligado
+    else if (
+      first === true &&
+      second === (null || false) &&
+      third === (null || false) &&
+      fourth === (null || false)
+    ) {
+      setImage(um);
+    }
+
+    // Caso o 2º esteja ligado e o resto desligado
+    else if (
+      first === (null || false) &&
+      second === true &&
+      third === (null || false) &&
+      fourth === (null || false)
+    ) {
+      setImage(dois);
+    }
+
+    // Caso o 3º esteja ligado e o resto desligado
+    else if (
+      first === (null || false) &&
+      second === (null || false) &&
+      third === true &&
+      fourth === (null || false)
+    ) {
+      setImage(tres);
+    }
+
+    // Caso o 4º esteja ligado e o resto desligado
+    else if (
+      first === (null || false) &&
+      second === (null || false) &&
+      third === (null || false) &&
+      fourth === true
+    ) {
+      setImage(quatro);
+    }
+
+    // Caso o 1º e 2º esteja ligado e o resto desligado
+    else if (
+      first === true &&
+      second === true &&
+      third === (null || false) &&
+      fourth === (null || false)
+    ) {
+      setImage(umDois);
+    }
+
+    // Caso o 1º e 3º esteja ligado e o resto desligado
+    else if (
+      first === true &&
+      second === (null || false) &&
+      third === true &&
+      fourth === (null || false)
+    ) {
+      setImage(umTres);
+    }
+
+    // Caso o 1º e 4º esteja ligado e o resto desligado
+    else if (
+      first === true &&
+      second === (null || false) &&
+      third === (null || false) &&
+      fourth === true
+    ) {
+      setImage(umQuatro);
+    }
+
+    // Caso o 1º 2º e 3º esteja ligado e o resto desligado
+    else if (
+      first === true &&
+      second === true &&
+      third === true &&
+      fourth === (null || false)
+    ) {
+      setImage(umDoisTres);
+    }
+
+    // Caso o 1º 2º e 4º esteja ligado e o resto desligado
+    else if (
+      first === true &&
+      second === true &&
+      third === (null || false) &&
+      fourth === true
+    ) {
+      setImage(umDoisQuatro);
+    }
+
+    // Caso o 1º 2º e 4º esteja ligado e o resto desligado
+    else if (
+      first === true &&
+      second === (null || false) &&
+      third === true &&
+      fourth === true
+    ) {
+      setImage(umTresQuatro);
+    }
+
+    // Caso o 2º 3º esteja ligado e o resto desligado
+    else if (
+      first === (null || false) &&
+      second === true &&
+      third === true &&
+      fourth === (null || false)
+    ) {
+      setImage(doisTres);
+    }
+
+    // Caso o 2º e 4º esteja ligado e o resto desligado
+    else if (
+      first === (null || false) &&
+      second === true &&
+      third === (null || false) &&
+      fourth === true
+    ) {
+      setImage(doisQuatro);
+    }
+
+    // Caso o 2º, 3º e 4º esteja ligado e o resto desligado
+    else if (
+      first === (null || false) &&
+      second === true &&
+      third === true &&
+      fourth === true
+    ) {
+      setImage(doisTresQuatro);
+    }
+
+    // Caso o 3º 4º esteja ligado e o resto desligado
+    else if (
+      first === (null || false) &&
+      second === (null || false) &&
+      third === true &&
+      fourth === true
+    ) {
+      setImage(tresQuatro);
+    }
+
+    // Caso todos estejam ligados
+    else if (
+      first === true &&
+      second === true &&
+      third === true &&
+      fourth === true
+    ) {
+      setImage(todosLigados);
+    }
+
+    console.log(image);
+  }, [first, second, third, fourth, image]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="flex flex-col gap-y-1">
-          <div className="bg-black p-5 rounded drop-shadow-lg ">
-            <div className="grid grid-cols-2 gap-4">
-              <div
-                className={`rounded-full p-5 border-4 ${
-                  first
-                    ? "border-yellow-400 bg-white drop-shadow-lg transition"
-                    : "bg-black"
+      <div className="flex justify-around items-center">
+        <header className="App-header">
+          <div className="flex flex-col gap-y-1">
+            <div className="bg-black p-5 rounded drop-shadow-lg ">
+              <div className="grid grid-cols-2 gap-4">
+                <div
+                  className={`rounded-full p-5 border-4 ${
+                    first
+                      ? "border-yellow-400 bg-white drop-shadow-lg transition"
+                      : "bg-black"
+                  }`}
+                ></div>
+                <div
+                  className={`rounded-full p-5 border-4 ${
+                    second
+                      ? "border-yellow-400 bg-white drop-shadow-lg transition"
+                      : "bg-black"
+                  }`}
+                ></div>
+                <div
+                  className={`rounded-full p-5 border-4 ${
+                    third
+                      ? "border-yellow-400 bg-white drop-shadow-lg transition"
+                      : "bg-black"
+                  }`}
+                ></div>
+                <div
+                  className={`rounded-full p-5 border-4 ${
+                    fourth
+                      ? "border-yellow-400 bg-white drop-shadow-lg transition"
+                      : "bg-black"
+                  }`}
+                ></div>
+              </div>
+            </div>
+            <div className="bg-black p-3 gap-x-2 rounded flex">
+              <button
+                className={`rounded-full flex justify-center items-center border-2 transition ${
+                  first ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
                 }`}
-              ></div>
-              <div
-                className={`rounded-full p-5 border-4 ${
-                  second
-                    ? "border-yellow-400 bg-white drop-shadow-lg transition"
-                    : "bg-black"
+                onClick={() => handleSetFirst(!first)}
+              >
+                <p className="text-black font-bold px-4 py-2">1</p>
+              </button>
+              <button
+                className={`rounded-full flex justify-center items-center border-2 transition  ${
+                  second ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
                 }`}
-              ></div>
-              <div
-                className={`rounded-full p-5 border-4 ${
-                  third
-                    ? "border-yellow-400 bg-white drop-shadow-lg transition"
-                    : "bg-black"
+                onClick={() => handleSetSecond(!second)}
+              >
+                <p className="text-black font-bold px-4 py-2">2</p>
+              </button>
+              <button
+                className={`rounded-full flex justify-center items-center border-2 transition  ${
+                  third ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
                 }`}
-              ></div>
-              <div
-                className={`rounded-full p-5 border-4 ${
-                  fourth
-                    ? "border-yellow-400 bg-white drop-shadow-lg transition"
-                    : "bg-black"
+                onClick={() => handleSetThird(!third)}
+              >
+                <p className="text-black font-bold px-4 py-2">3</p>
+              </button>
+              <button
+                className={`rounded-full flex justify-center items-center border-2 transition  ${
+                  fourth ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
                 }`}
-              ></div>
+                onClick={() => handleSetFourth(!fourth)}
+              >
+                <p className="text-black font-bold px-4 py-2">4</p>
+              </button>
             </div>
           </div>
-          <div className="bg-black p-3 gap-x-2 rounded flex">
-            <button
-              className={`rounded-full flex justify-center items-center border-2 transition ${
-                first ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
-              }`}
-              onClick={() => handleSetFirst(!first)}
-            >
-              <p className="text-black font-bold px-4 py-2">1</p>
-            </button>
-            <button
-              className={`rounded-full flex justify-center items-center border-2 transition  ${
-                second ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
-              }`}
-              onClick={() => handleSetSecond(!second)}
-            >
-              <p className="text-black font-bold px-4 py-2">2</p>
-            </button>
-            <button
-              className={`rounded-full flex justify-center items-center border-2 transition  ${
-                third ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
-              }`}
-              onClick={() => handleSetThird(!third)}
-            >
-              <p className="text-black font-bold px-4 py-2">3</p>
-            </button>
-            <button
-              className={`rounded-full flex justify-center items-center border-2 transition  ${
-                fourth ? "bg-[#eaeaea] border-yellow-400" : "bg-white"
-              }`}
-              onClick={() => handleSetFourth(!fourth)}
-            >
-              <p className="text-black font-bold px-4 py-2">4</p>
-            </button>
-          </div>
+          <p className="mt-5">
+            Pressione qualquer botão para controlar o fogão
+          </p>
+        </header>
+        <div>
+          <img src={image} className="h-full w-full" alt="" />
         </div>
-        <p className="mt-5">Pressione qualquer botão para controlar o fogão</p>
-      </header>
+      </div>
     </div>
   );
 }
