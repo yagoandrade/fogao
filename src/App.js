@@ -19,10 +19,10 @@ import quatro from "./images/4-ligado.jpeg";
 import todosLigados from "./images/todos-ligados.jpeg";
 
 function App() {
-  const [first, setFirst] = useState(localStorage.getItem("firstItem"));
-  const [second, setSecond] = useState(localStorage.getItem("secondItem"));
-  const [third, setThird] = useState(localStorage.getItem("thirdItem"));
-  const [fourth, setFourth] = useState(localStorage.getItem("fourthItem"));
+  const [first, setFirst] = useState(false);
+  const [second, setSecond] = useState(false);
+  const [third, setThird] = useState(false);
+  const [fourth, setFourth] = useState(false);
 
   const handleSetFirst = () => {
     if (first === null) {
@@ -223,10 +223,11 @@ function App() {
       third === true &&
       fourth === true
     ) {
+      console.log(todosLigados);
       setImage(todosLigados);
+    } else {
+      setImage(todosDesligados);
     }
-
-    console.log(image);
   }, [first, second, third, fourth, image]);
 
   return (
@@ -302,7 +303,8 @@ function App() {
             </div>
           </div>
           <p className="mt-5">
-            Pressione qualquer botão para controlar o fogão
+            Pressione qualquer botão para controlar o fogão {first} {second}{" "}
+            {third} {fourth}
           </p>
         </header>
         <div>
